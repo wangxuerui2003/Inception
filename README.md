@@ -1,8 +1,7 @@
 # Inception
+Create a LEMP stack website using 3 docker containers, 2 volumes and 1 docker network
 
-### Create a LEMP stack website using 3 docker containers, 2 volumes and 1 docker network
-
-## Install Docker
+## Install Docker on Debian (Just run the script)
 ```bash
 # Uninstall all the unofficial packages
 for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg -y; done
@@ -24,4 +23,10 @@ sudo apt-get update
 
 # install docker cli and docker compose
 sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+```
+
+## To avoid the need of using 'sudo' in front of every docker command
+```bash
+# Add user to the docker group
+$ sudo usermod -aG docker $USER
 ```
