@@ -1,0 +1,49 @@
+version: '3'
+
+services:
+  nginx:
+    build: ./requirements/nginx
+    container_name: nginx
+    ports:
+      - 443:443
+    depends_on:
+      - wordpress
+      - mariadb
+    networks:
+      - inception
+    restart: unless-stopped
+    
+
+  wordpress:
+    # build: ./requirements/wordpress
+    image: wordpress
+    networks:
+      - inception
+    volumes:
+      - wordpress_data
+
+  mariadb:
+    # build: ./requirements/mariadb
+    image: mariadb
+    networks:
+      - inception
+    volumes:
+      - mariadb_data
+
+networks:
+  inception:
+
+volumes:
+  wordpress_data:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/home/wxuerui/data/wordpress_data'
+
+  mariadb_data:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/home/wxuerui/data/mariadb_data'
