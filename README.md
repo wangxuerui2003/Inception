@@ -30,3 +30,10 @@ sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plug
 # Add user to the docker group
 $ sudo usermod -aG docker $USER
 ```
+
+## The .env file (under /srcs)
+```
+MYSQL_ROOT_PASSWORD=<your_mysql_root_password>
+MYSQL_USER=<your_mysql_user>
+MYSQL_PASSWORD=<your_mysql_password>
+```
