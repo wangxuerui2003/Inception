@@ -27,4 +27,5 @@ WORKDIR /var/www/html
 
 ENTRYPOINT [ "/entrypoint.sh" ]
 
+# Run php-fpm in the foreground
 CMD ["php-fpm7.3", "-F"]
