@@ -10,3 +10,6 @@ down:
 rebuild: down build-up
 
 restart: down up
+
+clean:
+	docker system prune -f
