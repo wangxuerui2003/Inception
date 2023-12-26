@@ -36,6 +36,7 @@ services:
   mariadb:
     build: ./requirements/mariadb
     image: my-mariadb:1.0
+    # image: mariadb
     container_name: mariadb
     env_file: .env
     environment:
