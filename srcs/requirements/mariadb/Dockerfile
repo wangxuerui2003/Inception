@@ -14,6 +14,8 @@ EXPOSE 3306
 COPY ./entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
+VOLUME /var/lib/mysql
+
 ENTRYPOINT [ "/entrypoint.sh" ]
 
 # Run mysql(mariadb) in the foreground
