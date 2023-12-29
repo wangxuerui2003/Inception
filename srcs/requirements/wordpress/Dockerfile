@@ -1,6 +1,5 @@
 FROM debian:buster
 
-# Install dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
 	ghostscript \
 	php7.3-fpm \
@@ -22,6 +21,8 @@ COPY ./conf/wordpress_pool.conf /etc/php/7.3/fpm/pool.d
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
+
+EXPOSE 9000
 
 WORKDIR /var/www/html
 
