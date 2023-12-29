@@ -1,8 +1,10 @@
 #!/bin/bash
 
+# Create the directory needed for mariadb and also give the ownership to mariadb/mysql
 mkdir -p /run/mysqld
 chown -R mysql:mysql /run/mysqld
 
+# If mysql database not created in the volume then create the database
 if [ ! -d "/var/lib/mysql/mysql" ]; then
 	chown -R mysql:mysql /var/lib/mysql 
 
@@ -21,6 +23,7 @@ if [ ! -d "/var/lib/mysql/mysql" ]; then
 	mysqld --user=mysql --bootstrap <<< $mysql_secure_installation_script
 fi
 
+# If the needed database (for wordpress) is not created then create it
 if [ ! -d "/var/lib/mysql/$MYSQL_DATABASE" ]; then
 
 	sqlcommands="
