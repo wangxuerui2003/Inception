@@ -26,7 +26,7 @@ services:
       - WORDPRESS_DB_HOST=mariadb:3306
       - WORDPRESS_DB_USER=$MYSQL_USER
       - WORDPRESS_DB_PASSWORD=$MYSQL_PASSWORD
-      - WORDPRESS_DB_NAME=wordpress
+      - WORDPRESS_DB_NAME=$MYSQL_DATABASE
     networks:
       - inception
     volumes:
@@ -38,8 +38,6 @@ services:
     image: my-mariadb:1.0
     container_name: mariadb
     env_file: .env
-    environment:
-      - MYSQL_DATABASE=wordpress
     networks:
       - inception
     volumes:

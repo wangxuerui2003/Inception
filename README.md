@@ -36,4 +36,5 @@ $ sudo usermod -aG docker $USER
 MYSQL_ROOT_PASSWORD=<your_mysql_root_password>
 MYSQL_USER=<your_mysql_user>
 MYSQL_PASSWORD=<your_mysql_password>
+MYSQL_DATABASE=<your_wordpress_database_name>
 ```
