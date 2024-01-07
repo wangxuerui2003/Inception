@@ -37,4 +37,8 @@ MYSQL_ROOT_PASSWORD=<your_mysql_root_password>
 MYSQL_USER=<your_mysql_user>
 MYSQL_PASSWORD=<your_mysql_password>
 MYSQL_DATABASE=<your_wordpress_database_name>
+
+WP_ADMIN_USER=<your_wp_admin_user>
+WP_ADMIN_PASSWORD=<your_wp_admin_pwd>
+WP_ADMIN_EMAIL=<your_wp_admin_email>
 ```
