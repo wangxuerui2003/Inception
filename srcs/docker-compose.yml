@@ -44,6 +44,18 @@ services:
       - wordpress_database:/var/lib/mysql
     restart: unless-stopped
 
+  redis:
+    build: ./requirements/bonus/redis
+    image: my-redis:1.0
+    container_name: redis
+    depends_on:
+      - wordpress
+    env_file:
+      - .env
+    networks:
+      - inception
+    restart: unless-stopped
+
 networks:
   inception:
 
