@@ -13,9 +13,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 	php7.3-mysql \
 	php7.3-xml \
 	php7.3-zip \
+	php7.3-redis \
 	curl \
+	sendmail \
 	; \
 	rm -rf /var/lib/apt/lists/*
+
+RUN curl -k -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar \
+	&& chmod +x wp-cli.phar \
+	&& mv wp-cli.phar /usr/local/bin/wp
 
 COPY ./conf/wordpress_pool.conf /etc/php/7.3/fpm/pool.d
 
