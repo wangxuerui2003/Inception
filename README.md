@@ -41,4 +41,6 @@ MYSQL_DATABASE=<your_wordpress_database_name>
 WP_ADMIN_USER=<your_wp_admin_user>
 WP_ADMIN_PASSWORD=<your_wp_admin_pwd>
 WP_ADMIN_EMAIL=<your_wp_admin_email>
+
+WP_USER_PASSWORD=<your_normal_wp_user_pwd>
 ```
