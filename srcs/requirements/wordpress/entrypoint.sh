@@ -27,6 +27,13 @@ if [ ! -e "./wp-config.php" ]; then
 	wp redis enable --allow-root
 	wp cache flush --allow-root
 
+	wp user create john john@example.com \
+		--role=subscriber \
+		--user_pass=$WP_USER_PASSWORD \
+		--first_name=john \
+		--last_name=doe \
+		--user_url=johndoe.com \
+		--allow-root
 
 	chown -R www-data:www-data .
 fi
