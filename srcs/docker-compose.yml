@@ -83,6 +83,16 @@ services:
     networks:
       - inception
     restart: unless-stopped
+  
+  adminer:
+    build: ./requirements/bonus/adminer
+    image: my-adminer:1.0
+    container_name: adminer
+    ports:
+      - 8080:8080
+    networks:
+      - inception
+    restart: unless-stopped
 
 networks:
   inception:
