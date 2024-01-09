@@ -56,6 +56,24 @@ services:
       - inception
     restart: unless-stopped
 
+  ftp:
+    build: ./requirements/bonus/ftp
+    image: my-ftp:1.0
+    container_name: ftp
+    depends_on:
+      - wordpress
+    env_file:
+      - .env
+    ports:
+      - 20:20
+      - 21:21
+      - 40000-40002:40000-40002  # ports for PASV connection
+    networks:
+      - inception
+    volumes:
+      - wordpress_website:/var/www/html
+    restart: unless-stopped
+
 networks:
   inception:
 
