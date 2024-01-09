@@ -43,4 +43,13 @@ WP_ADMIN_PASSWORD=<your_wp_admin_pwd>
 WP_ADMIN_EMAIL=<your_wp_admin_email>
 
 WP_USER_PASSWORD=<your_normal_wp_user_pwd>
+
+FTP_USER=<your_ftp_username>
+FTP_PASSWORD=<your_ftp_password>
 ```
+
+### Ports used
+* wordpress (nginx): **443**
+* ftp: **20, 21, 40000-40002**
+* static site: **4587**
+* adminer: **8080**
