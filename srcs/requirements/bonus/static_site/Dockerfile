@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 COPY conf/nginx.conf /etc/nginx/nginx.conf
 
-COPY public/* /var/www/html
+COPY www/* /var/www/html
 
 EXPOSE 4587
 
