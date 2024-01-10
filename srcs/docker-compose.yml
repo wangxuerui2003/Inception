@@ -94,10 +94,22 @@ services:
       - inception
     restart: unless-stopped
 
+  node18:
+    build: ./requirements/bonus/node18
+    image: my-node18:1.0
+    container_name: node18
+    ports:
+      - 3000:3000
+    networks:
+      - inception
+    restart: unless-stopped
+
   portainer:
     image: portainer/portainer
     container_name: portainer
     restart: always
+    networks:
+      - inception
     ports:
       - 9000:9000
     volumes:
