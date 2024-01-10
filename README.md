@@ -53,3 +53,4 @@ FTP_PASSWORD=<your_ftp_password>
 * ftp: **20, 21, 40000-40002**
 * static site: **4587**
 * adminer: **8080**
+* node18: **3000**
