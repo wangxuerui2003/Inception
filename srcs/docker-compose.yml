@@ -3,7 +3,7 @@ version: '3'
 services:
   nginx:
     build: ./requirements/nginx
-    image: my-nginx:1.0
+    image: nginx:1.0
     container_name: nginx
     ports:
       - 443:443
@@ -17,7 +17,7 @@ services:
     
   wordpress:
     build: ./requirements/wordpress
-    image: my-wordpress:1.0
+    image: wordpress:1.0
     container_name: wordpress
     depends_on:
       - mariadb
@@ -35,7 +35,7 @@ services:
 
   mariadb:
     build: ./requirements/mariadb
-    image: my-mariadb:1.0
+    image: mariadb:1.0
     container_name: mariadb
     env_file: .env
     networks:
@@ -46,7 +46,7 @@ services:
 
   redis:
     build: ./requirements/bonus/redis
-    image: my-redis:1.0
+    image: redis:1.0
     container_name: redis
     depends_on:
       - wordpress
@@ -58,7 +58,7 @@ services:
 
   ftp:
     build: ./requirements/bonus/ftp
-    image: my-ftp:1.0
+    image: ftp:1.0
     container_name: ftp
     depends_on:
       - wordpress
@@ -76,8 +76,8 @@ services:
   
   static_site:
     build: ./requirements/bonus/static_site
-    image: my-static-site:1.0
-    container_name: static_site
+    image: static-site:1.0
+    container_name: static-site
     ports:
       - 4587:4587
     networks:
@@ -86,7 +86,7 @@ services:
   
   adminer:
     build: ./requirements/bonus/adminer
-    image: my-adminer:1.0
+    image: adminer:1.0
     container_name: adminer
     ports:
       - 8080:8080
@@ -96,7 +96,7 @@ services:
 
   node18:
     build: ./requirements/bonus/node18
-    image: my-node18:1.0
+    image: node18:1.0
     container_name: node18
     ports:
       - 3000:3000
@@ -135,3 +135,8 @@ volumes:
       device: '/home/wxuerui/data/wordpress_database'
     
   portainer_data:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/home/wxuerui/data/portainer_data'
